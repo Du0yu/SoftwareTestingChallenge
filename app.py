@@ -489,5 +489,3 @@ def debug_images():
     
     return jsonify(image_info)
 
-if __name__ == '__main__':
-    app.run(debug=True)
