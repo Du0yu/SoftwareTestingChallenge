@@ -22,10 +22,12 @@ This project is designed to help you practice and improve your software testing 
 2. **Navigate to the project directory:**
     ```bash
     cd SoftwareTestingChallenge
-    3. **Start the Flask server to get started:**
-        ```bash
-        flask run
-        ```
+    ```  
+
+3. **Start the Flask server to get started:**
+    ```bash
+    flask run
+    ```
 
 ## Contributing
 
