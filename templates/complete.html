@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">🎉 恭喜完成所有测试！</h2>
+            </div>
+            <div class="card-body">
+                <div class="row text-center mb-4">
+                    <div class="col-md-4">
+                        <h3>{{ total_questions }}</h3>
+                        <p>总题数</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="text-success">{{ total_correct }}</h3>
+                        <p>答对题数</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="{% if overall_percentage >= 80 %}text-success{% elif overall_percentage >= 60 %}text-warning{% else %}text-danger{% endif %}">
+                            {{ overall_percentage }}%
+                        </h3>
+                        <p>总体正确率</p>
+                    </div>
+                </div>
+                
+                <h4>各次测试成绩:</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>测试次数</th>
+                                <th>得分</th>
+                                <th>正确率</th>
+                                <th>错题数</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for record in history %}
+                            <tr>
+                                <td>第{{ record.attempt }}次</td>
+                                <td>{{ record.score }}/{{ record.total }}</td>
+                                <td>{{ record.percentage }}%</td>
+                                <td>{{ record.wrong_count }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                {% if wrong_by_question %}
+                <h4 class="mt-4">重点复习题目 (错误次数≥2):</h4>
+                {% for q_num, wrongs in wrong_by_question.items() %}
+                    {% if wrongs|length >= 2 %}
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <h6>题目{{ q_num }} - 错误{{ wrongs|length }}次</h6>
+                            <p>{{ wrongs[0].question_text }}</p>
+                            <p><strong>正确答案:</strong> <span class="text-success">{{ wrongs[0].correct_answer }}</span></p>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+                
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('wrong_answers') }}" class="btn btn-warning me-2">查看完整错题集</a>
+                    <a href="{{ url_for('reset') }}" class="btn btn-secondary">重新开始</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

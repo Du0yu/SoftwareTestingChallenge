@@ -1,0 +1,317 @@
+{
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question_text": "针对以下 C 语言程序段，对于 (MaxNum，Type) 的取值，至少需要（   ）个测试用例能够满足判定覆盖的要求。\n\nwhile (MaxNum-->0 )\n{\n  if (10 == Type)\n      x = y * 2;\n   else\n      if (100 == Type)\n         x = y - 20;\n}\n",
+      "options": [
+      "A. 5",
+      "B. 2",
+      "C. 3",
+      "D. 4"
+      ],
+      "correct_answer": "3",
+      "has_image": false
+    },
+    {
+      "question_number": 2,
+      "question_text": "某公司用来计算不同工作年限的员工年终奖系统的需求描述如下：员工在公司的工作年限不超过 3 年，年终奖为月工资的 25%；员工在公司的工作年限超过 3 年，年终奖为月工资的 50%；员工在公司的工作年限超过 5 年，年终奖为月工资的 75%；工作年限超过 8 年，年终奖为月工资的 100%。员工工作年限必须是整型，并且最大值不超过 100。\n\n根据上述规格说明，为 \"工作年限\" 划分等价类，得到的有效等价类的数量为（   ）。",
+      "options": [
+      "A. 6",
+      "B. 8",
+      "C. 4",
+      "D. 2"
+      ],
+      "correct_answer": "4",
+      "has_image": false
+    },
+    {
+      "question_number": 3,
+      "question_text": "针对逻辑覆盖有下列叙述，（   ）是不正确的。",
+      "options": [
+        "A. 达到 100％CDC 要求就一定能够满足 100％SC 的要求",
+        "B. 达到 100％DC 要求就一定能够满足 100％SC 的要求",
+        "C. 达到 100％CC 要求就一定能够满足 100％SC 的要求",
+        "D. 达到 100％MCDC 要求就一定能够满足 100％SC 的要求"
+      ],
+      "correct_answer": "达到 100％CC 要求就一定能够满足 100％SC 的要求",
+      "has_image": false
+    },
+    {
+      "question_number": 4,
+      "question_text": "测试用例根据参与人员的经验和知识来编写；测试人员、开发人员、用户和其他的利益相关者对软件、软件使用和环境等方面所掌握的知识作为信息来源之一；对可能存在的缺陷及其分布情况的了解作为另一个信息来源。上述测试设计技术属于（   ）。",
+      "options": [
+        "A. 白盒测试",
+        "B. 基于经验的测试",
+        "C. 黑盒测试",
+        "D. 基于结构的测试"
+      ],
+      "correct_answer": "基于经验的测试",
+      "has_image": false
+    },
+    {
+      "question_number": 5,
+      "question_text": "针对下面的程序，满足 100% 语句覆盖的测试用例（a,b 的值）为（   ）。\n\nIf (a>0 and b>5) Then\n   c=a+b\nend if\nIf (a>5 or b>10) Then\n   c=a-b\nend if",
+      "options": [
+      "A. a=6, b=6",
+      "B. a=2, b=1",
+      "C. a= -2, b=12",
+      "D. a=10, b=4"
+      ],
+      "correct_answer": "a=6, b=6",
+      "has_image": false
+    },
+    {
+      "question_number": 6,
+      "question_text": "根据下图所示的源代码控制流图，为了达到 100% 的语句覆盖率，最少需要设计多少测试用例？（   ）",
+      "options": [
+        "A. 1 个",
+        "B. 3 个",
+        "C. 2 个",
+        "D. 4 个"
+      ],
+      "correct_answer": "1 个",
+      "has_image": true,
+      "image_src": "images\\image_002.jpeg",
+      "image_alt": "控制流图"
+    },
+    {
+      "question_number": 7,
+      "question_text": "针对以下程序段，对于变量 C 的取值，至少需要（   ）个测试用例才能满足语句覆盖的要求。\n\nc = ((u8_t *)q->payload)[i];\nswitch(c)\n{\n case SLIP_END:\n     sio_send(SLIP_ESC,netif->state);\n     sio_send(SLIP_ESC_END,netif->state);\n     break;\n case SLIP_ESC:\n    sio_send(SLIP_ESC,netif->state);\n     sio_send(SLIP_ESC_ESC,netif->state);\n     break;\n default:\n    sio_end(c, netif->state);\n    break;\n};",
+      "options": [
+      "A. 3",
+      "B. 2",
+      "C. 1",
+      "D. 4"
+      ],
+      "correct_answer": "3",
+      "has_image": false
+    },
+    {
+      "question_number": 8,
+      "question_text": "根据下图所示的源代码控制流程图，为了满足 100% 的判定覆盖率，至少需要多少测试用例？（   ）",
+      "options": [
+        "A. 3 个",
+        "B. 2 个",
+        "C. 1 个",
+        "D. 4 个"
+      ],
+      "correct_answer": "2 个",
+      "has_image": true,
+      "image_src": "images\\image_003.jpeg",
+      "image_alt": "控制流程图"
+    },
+    {
+      "question_number": 9,
+      "question_text": "下面关于等价类的说法错误的是（   ）。",
+      "options": [
+        "A. 等价类划分可以分为两种基本类型的数据：有效数据和无效数据",
+        "B. 等价类划分只应用于系统测试",
+        "C. 等价类技术属于基于说明的测试技术",
+        "D. 等价类划分也可以基于输出、内部值、时间相关的值以及接口参数等进行"
+      ],
+      "correct_answer": "等价类划分只应用于系统测试",
+      "has_image": false
+    },
+    {
+      "question_number": 10,
+      "question_text": "某个程序有三个输入参数 A、B 和 C，输入参数的有效条件是 A<=B 和 C>=B，如果应用等价类划分的技术，只考虑单缺陷组合（无效等价类只能与有效等价类组合），（   ）组最适合做此程序的健壮性测试（用无效的数据进行的测试）。\n\n（1）A>B，C<B\n（2）A>B，C>=B\n（3）A<=B，C>=B\n（4）A<=B，C<B\n选择一项：",
+      "options": [
+      "A. （2）（3）",
+      "B. （1）（2）（3）（4）",
+      "C. （2）（4）",
+      "D. （1）（2）（4）"
+      ],
+      "correct_answer": "（2）（4）",
+      "has_image": false
+    },
+    {
+      "question_number": 11,
+      "question_text": "在某大学学籍管理信息系统中，假设学生年龄的输入范围为 16～40，则根据黑盒测试中的等价类划分技术，下面划分正确的是（   ）。",
+      "options": [
+        "A. 可划分为 1 个有效等价类，1 个无效等价类",
+        "B. 可划分为 2 个有效等价类，1 个无效等价类",
+        "C. 可划分为 2 个有效等价类，2 个无效等价类",
+        "D. 可划分为 1 个有效等价类，2 个无效等价类"
+      ],
+      "correct_answer": "可划分为 1 个有效等价类，2 个无效等价类",
+      "has_image": false
+    },
+    {
+      "question_number": 12,
+      "question_text": "以下控制流程图的环路复杂性 V(G) 等于（   ）。",
+      "options": [
+        "A. 6",
+        "B. 3",
+        "C. 5",
+        "D. 4"
+      ],
+      "correct_answer": "5",
+      "has_image": true,
+      "image_src": "images\\image_004.jpeg",
+      "image_alt": "控制流程图"
+    },
+    {
+      "question_number": 13,
+      "question_text": "以下不属于基于结构的技术的共同特点的是（   ）",
+      "options": [
+        "A. 可以通过已有的测试用例测量软件的测试用例覆盖率",
+        "B. 使用正式或非正式的模型来描述需要解决的问题",
+        "C. 根据软件的结构信息设计测试用例",
+        "D. 通过系统化地导出设计用例来提高覆盖率"
+      ],
+      "correct_answer": "使用正式或非正式的模型来描述需要解决的问题",
+      "has_image": false
+    },
+    {
+      "question_number": 14,
+      "question_text": "公司定义的员工工资范围的下限为 2000 元 / 月，上限为 51999 元 / 月，工资为整数，那么员工工资的边界值为（   ）。",
+      "options": [
+        "A. 1999，51998",
+        "B. 1999，51998",
+        "C. 2000，51998",
+        "D. 2000，51999"
+      ],
+      "correct_answer": "2000，51999",
+      "has_image": false
+    },
+    {
+      "question_number": 15,
+      "question_text": "阅读下列流程图,当用判定覆盖法进行测试时，至少需要设计（   ）个测试用例。",
+      "options": [
+        "A. 8",
+        "B. 2",
+        "C. 6",
+        "D. 4"
+      ],
+      "correct_answer": "4",
+      "has_image": true,
+      "image_src": "images\\image_005.jpeg",
+      "image_alt": "流程图"
+    },
+    {
+      "question_number": 16,
+      "question_text": "下面关于测试设计技术的描述错误的是（   ）",
+      "options": [
+        "A. 系统测试使用黑盒测试技术，不会使用白盒测试技术",
+        "B. 白盒测试设计技术是基于分析被测组件或系统的结构的测试技术",
+        "C. 黑盒测试设计技术是依据分析测试基础文档来选择测试条件、测试用例或测试数据的技术",
+        "D. 使用测试设计技术的目的是为了识别测试条件和开发测试用例"
+      ],
+      "correct_answer": "系统测试使用黑盒测试技术，不会使用白盒测试技术",
+      "has_image": false
+    },
+    {
+      "question_number": 17,
+      "question_text": "某原始决策表如下：表中的规则可能存在一定的冗余，如对其进行优化，得到的最优决策表的规则有（   ）条？",
+      "options": [
+      "A. 5",
+      "B. 8",
+      "C. 6",
+      "D. 7"
+      ],
+      "correct_answer": "6",
+      "has_image": true,
+      "image_src": "images\\image_006.jpeg",
+      "image_alt": "决策表"
+    },
+    {
+      "question_number": 18,
+      "question_text": "针对下列程序段，对于 (A，B) 的取值，以下哪个测试用例组合能够满足条件覆盖的要求。（   ）\n\nIF (( A - 10) = 20 AND ( B + 20 ) > 10 ) THEN C = 0\nIF (( A - 30) < 10 AND ( B - 30 ) < 0 ) THEN B = 30\n\n①A=50  B=-10  ②A=40  B=40   ③A=30  B=-10  ④A=30  B=30\n选择一项：",
+      "options": [
+      "A. ①④",
+      "B. ②④",
+      "C. ③④",
+      "D. ①②"
+      ],
+      "correct_answer": "①④",
+      "has_image": false
+    },
+    {
+      "question_number": 19,
+      "question_text": "系统化的测试主要会受哪些因素的影响？（   ）\n（1）组织的架构\n（2）测试及开发过程的成熟度\n（3）项目时间的限制\n（4）安全或规范需求\n（5）参与的人员\n选择一项：",
+      "options": [
+      "A. （1）（2）（3）（4）（5）",
+      "B. （2）（3）（4）",
+      "C. （1）（2）",
+      "D. （1）（3）（4）（5）"
+      ],
+      "correct_answer": "（1）（2）（3）（4）（5）",
+      "has_image": false
+    },
+    {
+      "question_number": 20,
+      "question_text": "下面关于决策表测试的描述错误的是（   ）。",
+      "options": [
+        "A. 决策表的优点是可以生成测试条件的各种组合，而这些组合可能是利用其他方法无法被测试到的",
+        "B. 决策表描绘了状态和输入之间的关系，并能显示可能的无效状态转换",
+        "C. 当被测对象的行为由一些逻辑条件决定时，可应用决策表测试技术",
+        "D. 决策表的每一列对应了一个业务规则，该规则定义了各种条件的一个特定组合"
+      ],
+      "correct_answer": "决策表描绘了状态和输入之间的关系，并能显示可能的无效状态转换",
+      "has_image": false
+    },
+    {
+      "question_number": 21,
+      "question_text": "针对下面的程序段：\nIf(x>0 and y>0) then\n   z=z/x\nend if\nif(x>1 or z>1) then\n   z=z+1\nend if\nz=y+z\n满足 100% 语句覆盖率和满足 100% 判定覆盖率的最有效的测试为（   ）。\n（1）x=2, y=1, z=6\n（2）x=1, y=0, z=1\n（3）x=0, y=6, z=6\n（4）x=0, y=12, z=6\n选择一项：",
+      "options": [
+      "A. （1）（2）；（2）（3）（4）",
+      "B. （1）；（1）（2）",
+      "C. （1）（2）（3）；（1）",
+      "D. （2）；（1）（2）"
+      ],
+      "correct_answer": "（1）；（1）（2）",
+      "has_image": false
+    },
+    {
+      "question_number": 22,
+      "question_text": "假定 A、B 为布尔变量，对于逻辑表达式（A && B），至少需要（   ）个测试用例才能完成 MCDC 覆盖。",
+      "options": [
+        "A. 4",
+        "B. 1",
+        "C. 2",
+        "D. 3"
+      ],
+      "correct_answer": "3",
+      "has_image": false
+    },
+    {
+      "question_number": 23,
+      "question_text": "下面哪个属于基于结构测试技术的特点？（   ）",
+      "options": [
+        "A. 根据软件的结构信息获取测试用例",
+        "B. 可以通过已有的测试用例测量软件的测试覆盖率，并通过系统化导出设计测试用例来提高测试覆盖率",
+        "C. 测试用例根据参与人员的经验和知识来获得",
+        "D. 使用正式或者非正式的模型来描述需要解决的问题或者软件"
+      ],
+      "correct_answer": "根据软件的结构信息获取测试用例",
+      "has_image": false
+    },
+    {
+      "question_number": 24,
+      "question_text": "以下所示程序控制流程图中有（   ）条线性无关的基本路径。",
+      "options": [
+        "A. 4",
+        "B. 3",
+        "C. 1",
+        "D. 2"
+      ],
+      "correct_answer": "3",
+      "has_image": true,
+      "image_src": "images\\image_007.jpeg",
+      "image_alt": "程序控制流程图"
+    },
+    {
+      "question_number": 25,
+      "question_text": "针对下面的程序代码，至少需要多少个测试用例才能满足 100% 的判定覆盖率？（   ）\n\n/* 输入 1 到 10 之间的偶数 */\n#include<stdio.h>\nint main()\n{\n  int i=1;\n  while(i<=10)\n  {\n    if(i%2==0)\n    {\n      printf(\"%d\",i);\n    }\n    i++;\n  }\n  return 0;\n}",
+      "options": [
+      "A. 3",
+      "B. 2",
+      "C. 4",
+      "D. 1"
+      ],
+      "correct_answer": "2",
+      "has_image": false
+    }
+  ]
+}

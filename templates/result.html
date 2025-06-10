@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">第{{ attempt }}次测试结果</h3>
+            </div>
+            <div class="card-body text-center">
+                <h2 class="{% if percentage >= 80 %}text-success{% elif percentage >= 60 %}text-warning{% else %}text-danger{% endif %}">
+                    {{ score }}/{{ total }} ({{ percentage }}%)
+                </h2>
+                
+                {% if wrong_answers %}
+                <div class="mt-4">
+                    <h4>错题回顾:</h4>
+                    {% for wrong in wrong_answers %}
+                    <div class="card mt-2 wrong-answer">
+                        <div class="card-body">
+                            <h6>题目{{ wrong.question_number }}: {{ wrong.question_text }}</h6>
+                            <p><strong>您的答案:</strong> <span class="text-danger">{{ wrong.user_answer }}</span></p>
+                            <p><strong>正确答案:</strong> <span class="text-success">{{ wrong.correct_answer }}</span></p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <div class="mt-4">
+                    {% if attempt < max_attempts %}
+                        <a href="{{ url_for('start_quiz') }}" class="btn btn-primary">继续下一次测试</a>
+                    {% else %}
+                        <a href="{{ url_for('quiz_complete') }}" class="btn btn-success">查看总结</a>
+                    {% endif %}
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary ms-2">返回首页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

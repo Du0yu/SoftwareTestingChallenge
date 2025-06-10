@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>{{ quiz_title }} - 错题集</h2>
+            
+            <!-- Quiz Selection for Wrong Answers -->
+            <form method="POST" action="{{ url_for('select_quiz') }}" class="d-flex align-items-center">
+                <select name="quiz_id" class="form-select me-2" style="width: auto;" onchange="this.form.submit()">
+                    {% for quiz_id, quiz_info in available_quizzes.items() %}
+                    <option value="{{ quiz_id }}" {% if quiz_id == current_quiz %}selected{% endif %}>
+                        {{ quiz_info.title }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <small class="text-muted">切换题库</small>
+            </form>
+        </div>
+        
+        {% if wrong_answers %}
+            <p>{{ quiz_title }}共收集到 {{ wrong_answers|length }} 道错题</p>
+            
+            {% for wrong in wrong_answers %}
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5>题目{{ wrong.question_number }} (第{{ wrong.attempt }}次测试)</h5>
+                    <small class="text-muted">{{ wrong.timestamp[:19] }}</small>
+                </div>
+                <div class="card-body">
+                    <h6>{{ wrong.question_text }}</h6>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="wrong-answer p-2 rounded">
+                                <strong>您的答案:</strong> {{ wrong.user_answer }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="correct-answer p-2 rounded">
+                                <strong>正确答案:</strong> {{ wrong.correct_answer }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-success">
+                <h4>太棒了！{{ quiz_title }}还没有错题记录</h4>
+                <p>继续保持，争取全部答对！</p>
+            </div>
+        {% endif %}
+        
+        <div class="mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-primary">返回首页</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,304 @@
+{
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question_text": "下面的哪项不属于基本测试过程的计划和控制步骤的任务？",
+      "options": [
+        "A. 确定测试的范围和风险",
+        "B. 创建测试设计规范说明",
+        "C. 选择合适的度量项",
+        "D. 定义入口和出口准则"
+      ],
+      "correct_answer": "创建测试设计规范说明",
+      "has_image": false
+    },
+    {
+      "question_number": 2,
+      "question_text": "软件测试基本过程由哪些主要活动组成？",
+      "options": [
+        "A. 1，2，3，4，5",
+        "B. 1，2，3",
+        "C. 1，3.，5",
+        "D. 1，3，4"
+      ],
+      "correct_answer": "1，2，3，4，5",
+      "has_image": false
+    },
+    {
+      "question_number": 3,
+      "question_text": "某通信公司购买了某个生产商的 ADSL MODEM 作为客户上网的客户端，公司计划对 ADSL MODEM 进行一次验收测试。你认为下面哪个原因是实施验收测试的直接原因？",
+      "options": [
+        "A. 尽量发现 ADSL MODEM 中的缺陷",
+        "B. 确保 ADSL MODEM 没有缺陷",
+        "C. 确保 ADSL MODEM 符合公司的安全性要求",
+        "D. 确保 ADSL MODEM 可以按照预期正常工作"
+      ],
+      "correct_answer": "确保 ADSL MODEM 可以按照预期正常工作",
+      "has_image": false
+    },
+    {
+      "question_number": 4,
+      "question_text": "在软件产品发布给客户之后，在 6 个月内从用户使用现场反馈的缺陷数目，大概是总缺陷数目的 5%，即测试过程中缺陷发现比例大概在 95%。尽管缺陷的发现率已经很高了，但是高层经理对此并不满意。你认为下面的哪个测试基本原则可以帮助你说服高层经理的误解？",
+      "options": [
+        "A. 穷尽测试是不可能的",
+        "B. 测试可以显示缺陷的存在，不能证明系统不存在缺陷",
+        "C. 杀虫剂悖论",
+        "D. 缺陷的集群效应"
+      ],
+      "correct_answer": "穷尽测试是不可能的",
+      "has_image": false
+    },
+    {
+      "question_number": 5,
+      "question_text": "在软件项目的早期就开始制订测试计划，你认为这体现了哪个测试目的？",
+      "options": [
+        "A. 通过动态测试发现缺陷",
+        "B. 预防缺陷",
+        "C. 证明软件系统可以正常工作",
+        "D. 检测缺陷"
+      ],
+      "correct_answer": "预防缺陷",
+      "has_image": false
+    },
+    {
+      "question_number": 6,
+      "question_text": "在组件测试和集成测试执行过程中，测试人员希望尽量多地发现测试对象的失效，其目的是为了",
+      "options": [
+        "A. 识别和修改尽量多的缺陷",
+        "B. 验证测试过程中发现的缺陷是否真的得到了修改",
+        "C. 过程改进",
+        "D. 确认测试对象是否可以正确工作"
+      ],
+      "correct_answer": "识别和修改尽量多的缺陷",
+      "has_image": false
+    },
+    {
+      "question_number": 7,
+      "question_text": "一个测试用例通常包括\n1）前置条件   2）输入    3）预期行为   4）预期结果\n选择一项：",
+      "options": [
+      "A. 1）、2）、4）",
+      "B. 1）、2）、3）",
+      "C. 1）、2）",
+      "D. 1）、2）、3）、4）"
+      ],
+      "correct_answer": "1）、2）、3）、4）",
+      "has_image": false
+    },
+    {
+      "question_number": 8,
+      "question_text": "为了更多地发现被测对象中的缺陷，测试人员需要不断对测试用例进行评审和更新。该论点体现了哪个测试基本原则？",
+      "options": [
+        "A. 穷尽测试不可能",
+        "B. 测试的尽早介入",
+        "C. 缺陷集群效应",
+        "D. 杀虫剂悖论"
+      ],
+      "correct_answer": "杀虫剂悖论",
+      "has_image": false
+    },
+    {
+      "question_number": 9,
+      "question_text": "根据 ANSI/IEEE829 标准, 以下（    ）属于《测试程序说明》中程序步骤的内容\n① 启动         ② 目的\n③ 日志         ④ 设置\n选择一项：",
+      "options": [
+      "A. ①、③、④",
+      "B. ①、②、③",
+      "C. ②、③"
+      ],
+      "correct_answer": "①、③、④",
+      "has_image": false
+    },
+    {
+      "question_number": 10,
+      "question_text": "下列叙述中哪个是正确的？",
+      "options": [
+        "A. 重复测试：使软件在不够理想的条件下运行，观察软件对外部资源的要求和依赖的程度",
+        "B. 完整 C/S 体系结构测试，只包括网络运行和性能测试",
+        "C. 重复测试：不断执行同样的操作，这种反复测试的主要原因是看内存是否不足",
+        "D. 压迫测试：提供条件任软件发挥，最大限度地发掘软件的能力"
+      ],
+      "correct_answer": "重复测试：不断执行同样的操作，这种反复测试的主要原因是看内存是否不足",
+      "has_image": false
+    },
+    {
+      "question_number": 11,
+      "question_text": "以下关于功能测试用例的意义的叙述，正确的是\n① 避免盲目测试并提高测试效率\n② 令软件测试的实施重点突出、目的明确\n③ 在回归测试中无需修正测试用例便可继续开展测试工作\n④ 测试用例的通用化和复用化使软件测试易于开展",
+      "options": [
+      "A. ①③",
+      "B. ②③",
+      "C. ①②④",
+      "D. ①②③"
+      ],
+      "correct_answer": "①②④",
+      "has_image": false
+    },
+    {
+      "question_number": 12,
+      "question_text": "以下哪个不是易用性测试包括的内容",
+      "options": [
+        "A. 文档测试",
+        "B. 菜单测试",
+        "C. 安装测试",
+        "D. 界面测试"
+      ],
+      "correct_answer": "文档测试",
+      "has_image": false
+    },
+    {
+      "question_number": 13,
+      "question_text": "以下哪个不是文档测试包括的内容?",
+      "options": [
+        "A. 开发文档",
+        "B. 用户文档",
+        "C. 合同文档",
+        "D. 管理文档"
+      ],
+      "correct_answer": "合同文档",
+      "has_image": false
+    },
+    {
+      "question_number": 14,
+      "question_text": "针对用户手册的测试，以下描述不正确的是",
+      "options": [
+        "A. 检查每条陈述",
+        "B. 修改错误设计",
+        "C. 准确地按照手册的描述使用程序",
+        "D. 查找容易误导用户的内容"
+      ],
+      "correct_answer": "修改错误设计",
+      "has_image": false
+    },
+    {
+      "question_number": 15,
+      "question_text": "下列哪项对于测试的描述是正确的？",
+      "options": [
+        "A. 人为的错误造成程序内的缺陷，而程序内的缺陷可能会成为失效",
+        "B. 当程序期望结果和实际结果有所偏差时，可以肯定的就是由程序内的缺陷引起的",
+        "C. 如果没有发现失效，也就表示程序没有缺陷",
+        "D. 程序中有缺陷，就肯定会在外部有所反应，这就是 ISTQB（International Software Testing Qualifications Board) 所说的失效"
+      ],
+      "correct_answer": "人为的错误造成程序内的缺陷，而程序内的缺陷可能会成为失效",
+      "has_image": false
+    },
+    {
+      "question_number": 16,
+      "question_text": "按照风险设定测试用例的优先级并按照优先级顺序进行测试，符合测试的哪个基本原则？",
+      "options": [
+        "A. 测试只能显示缺陷的存在",
+        "B. 杀虫剂悖论",
+        "C. 缺陷集群性",
+        "D. 穷尽测试时不可能的"
+      ],
+      "correct_answer": "穷尽测试时不可能的",
+      "has_image": false
+    },
+    {
+      "question_number": 17,
+      "question_text": "关于独立测试的描述，下面哪个是错误的？",
+      "options": [
+        "A. 测试通常被认为是破坏性的活动，而软件开发通常被认为是建设性的活动",
+        "B. 独立测试通常可以更高效地发现软件缺陷和软件存在的失效",
+        "C. 独立测试只可应用在高级的测试活动中，如系统测试和验收测试",
+        "D. 软件测试往往需要与软件开发不同的思维方式"
+      ],
+      "correct_answer": "独立测试只可应用在高级的测试活动中，如系统测试和验收测试",
+      "has_image": false
+    },
+    {
+      "question_number": 18,
+      "question_text": "下列关于错误、缺陷和失效的观点正确的是",
+      "options": [
+        "A. 所有的缺陷都会产生失效",
+        "B. 人都会犯错误，因此由人设计的程序也会有缺陷",
+        "C. 失效主要由人的错误造成的，和环境条件没有关系",
+        "D. 当存在缺陷的代码被执行时，才可能引发软件错误"
+      ],
+      "correct_answer": "人都会犯错误，因此由人设计的程序也会有缺陷",
+      "has_image": false
+    },
+    {
+      "question_number": 19,
+      "question_text": "以下哪个不属于软件测试在开发、维护和运行中能够起到的作用？",
+      "options": [
+        "A. 可以减少软件系统在运行环境中的风险",
+        "B. 可能更好地满足合同或法律法规的要求",
+        "C. 可以用于评价开发团队的能力",
+        "D. 可以提高软件系统的质量"
+      ],
+      "correct_answer": "可以用于评价开发团队的能力",
+      "has_image": false
+    },
+    {
+      "question_number": 20,
+      "question_text": "在判断测试是否足够时，下列哪些方面是不需要考虑的？",
+      "options": [
+        "A. 项目在时间上的限制",
+        "B. 投入的测试人员的数量",
+        "C. 风险",
+        "D. 项目在预算上的限制"
+      ],
+      "correct_answer": "投入的测试人员的数量",
+      "has_image": false
+    },
+    {
+      "question_number": 21,
+      "question_text": "以下哪个不是软件测试的目标？",
+      "options": [
+        "A. 发现金额",
+        "B. 为决策提供信息",
+        "C. 改进测试流程",
+        "D. 增加对质量的信息"
+      ],
+      "correct_answer": "改进测试流程",
+      "has_image": false
+    },
+    {
+      "question_number": 22,
+      "question_text": "下列关于不同的测试阶段的描述哪个是错误的？",
+      "options": [
+        "A. 维护测试通常是为了验证开发过程中发现的缺陷是否被正确修复",
+        "B. 不同的测试阶段，其测试目标是不同的",
+        "C. 验收测试的主要目标是确认系统是否按照预期工作，是建立满足了需求的信心",
+        "D. 组件测试的主要目标是尽可能地发现失效，从而识别和修正尽可能多的缺陷"
+      ],
+      "correct_answer": "维护测试通常是为了验证开发过程中发现的缺陷是否被正确修复",
+      "has_image": false
+    },
+    {
+      "question_number": 23,
+      "question_text": "规划测试环境和确定测试需要的基础设施和工具属于下面的哪个活动？",
+      "options": [
+        "A. 实现和执行",
+        "B. 计划和控制",
+        "C. 分析和设计",
+        "D. 评估出口准则和报告"
+      ],
+      "correct_answer": "分析和设计",
+      "has_image": false
+    },
+    {
+      "question_number": 24,
+      "question_text": "ISTQB 软件测试术语中，与失效（Failure）、错误（Error）、缺陷（Defect）几个术语的同义词分别是？",
+      "options": [
+        "A. Fail、Mistake、Bug",
+        "B. Fault、Bug、Mistake",
+        "C. Fault、Mistake、Bug",
+        "D. Fail、Fault、Bug"
+      ],
+      "correct_answer": "Fail、Mistake、Bug",
+      "has_image": false
+    },
+    {
+      "question_number": 25,
+      "question_text": "你认为 \"软件测试的 7 个基本原则\"，可以应用在 ISTQB 的哪个测试阶段？",
+      "options": [
+        "A. 适用于整个测试生命周期",
+        "B. 测试分析与设计阶段",
+        "C. 测试实现与执行阶段",
+        "D. 测试出口准则评估与报告阶段"
+      ],
+      "correct_answer": "适用于整个测试生命周期",
+      "has_image": false
+    }
+  ]
+}

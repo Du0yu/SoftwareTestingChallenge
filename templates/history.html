@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>{{ quiz_title }} - 测试历史记录</h2>
+            
+            <!-- Quiz Selection for History -->
+            <form method="POST" action="{{ url_for('select_quiz') }}" class="d-flex align-items-center">
+                <select name="quiz_id" class="form-select me-2" style="width: auto;" onchange="this.form.submit()">
+                    {% for quiz_id, quiz_info in available_quizzes.items() %}
+                    <option value="{{ quiz_id }}" {% if quiz_id == current_quiz %}selected{% endif %}>
+                        {{ quiz_info.title }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <small class="text-muted">切换题库</small>
+            </form>
+        </div>
+        
+        {% if history %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>测试次数</th>
+                            <th>得分</th>
+                            <th>正确率</th>
+                            <th>错题数</th>
+                            <th>测试时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in history %}
+                        <tr>
+                            <td>第{{ record.attempt }}次</td>
+                            <td>{{ record.score }}/{{ record.total }}</td>
+                            <td>
+                                <span class="{% if record.percentage >= 80 %}text-success{% elif record.percentage >= 60 %}text-warning{% else %}text-danger{% endif %}">
+                                    {{ record.percentage }}%
+                                </span>
+                            </td>
+                            <td>{{ record.wrong_count }}</td>
+                            <td>{{ record.timestamp[:19] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                <h4>{{ quiz_title }}还没有测试记录</h4>
+                <p>开始您的第一次测试吧！</p>
+            </div>
+        {% endif %}
+        
+        <div class="mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-primary">返回首页</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
