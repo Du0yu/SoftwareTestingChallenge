@@ -1,7 +1,7 @@
 # Software Testing Challenge
 
 Welcome to the **Software Testing Challenge** repository!
-
+This branch is for deploying the project in vercel, which is a web application designed to help you practice and improve your software testing skills.
 ## Overview
 
 This project is designed to help you practice and improve your software testing skills. It contains a variety of coding challenges and exercises focused on different aspects of software testing, including unit testing, integration testing, and test automation.
