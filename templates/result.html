@@ -16,9 +16,8 @@
                 <div class="mt-4">
                     <h4>错题回顾:</h4>
                     {% for wrong in wrong_answers %}
-                    <div class="card mt-2 wrong-answer">
-                        <div class="card-body">
-                            <h6>题目{{ wrong.question_number }}: {{ wrong.question_text }}</h6>
+                    <div class="card mt-2 wrong-answer">                        <div class="card-body">
+                            <h6>题目{{ wrong.question_number }}: {{ wrong.question_text | replace('\n', '<br>') | safe }}</h6>
                             <p><strong>您的答案:</strong> <span class="text-danger">{{ wrong.user_answer }}</span></p>
                             <p><strong>正确答案:</strong> <span class="text-success">{{ wrong.correct_answer }}</span></p>
                         </div>

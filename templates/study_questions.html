@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>📚 {{ quiz_info.title }} - 背题模式</h2>
+                    <div>
+                        <a href="{{ url_for('study_mode') }}" class="btn btn-outline-secondary btn-sm">切换题库</a>
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary btn-sm">返回首页</a>
+                    </div>
+                </div>
+                <small class="text-muted">共 {{ quiz_info.total_questions }} 道题目</small>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% for question in questions %}
+                    <div class="col-md-6 col-lg-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">
+                                    <span class="badge bg-primary me-2">{{ question.question_number }}</span>
+                                    {{ question.question_text[:50] }}{% if question.question_text|length > 50 %}...{% endif %}
+                                </h6>
+                                {% if question.has_image %}
+                                <small class="text-muted"><i class="fas fa-image"></i> 包含图片</small>
+                                {% endif %}
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ url_for('study_question', quiz_id=quiz_id, question_number=question.question_number) }}" 
+                                   class="btn btn-sm btn-primary">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <!-- 快速跳转 -->
+                <div class="mt-4">
+                    <h5>快速跳转</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        {% for question in questions %}
+                        <a href="{{ url_for('study_question', quiz_id=quiz_id, question_number=question.question_number) }}" 
+                           class="btn btn-outline-primary btn-sm">{{ question.question_number }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

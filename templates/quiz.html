@@ -9,23 +9,31 @@
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: {{ (question_index/total_questions)*100 }}%"></div>
                 </div>
-            </div>
+            </div>            
             <div class="card-body">
-                <h5 class="card-title">{{ question.question_text }}</h5>
-                
-                <!-- Display image if question has one -->
+                <h5 class="card-title">{{ question.question_text | replace('\n', '<br>') | safe }}</h5>
+                  <!-- Display image if question has one -->
                 {% if question.has_image and question.image_src %}
-                {% set clean_filename = question.image_src.replace('\\', '/').replace('images/', '').replace('images\\', '') %}
                 <div class="text-center my-3">
-                    <img src="{{ url_for('quiz_images', filename=clean_filename) }}" 
-                         alt="{{ question.image_alt or '题目图片' }}" 
-                         class="img-fluid border rounded shadow-sm" 
-                         style="max-width: 100%; height: auto;"
-                         onerror="this.style.display='none'; document.getElementById('image-error-{{ question.question_number }}').style.display='block';">
-                    <div id="image-error-{{ question.question_number }}" class="alert alert-warning mt-2" style="display: none;">
-                        <i class="fas fa-exclamation-triangle"></i> 图片无法加载: {{ clean_filename }}
-                        <br><small>请确保图片文件存在于 source_challenges/images/ 目录中</small>
-                    </div>
+                    {% if question.image_src.startswith('data:image/') %}
+                        <!-- Base64 embedded image -->
+                        <img src="{{ question.image_src }}" 
+                             alt="{{ question.image_alt or '题目图片' }}" 
+                             class="img-fluid border rounded shadow-sm" 
+                             style="max-width: 100%; height: auto;">
+                    {% else %}
+                        <!-- File-based image -->
+                        {% set clean_filename = question.image_src.replace('\\', '/').replace('images/', '').replace('images\\', '') %}
+                        <img src="{{ url_for('quiz_images', filename=clean_filename) }}" 
+                             alt="{{ question.image_alt or '题目图片' }}" 
+                             class="img-fluid border rounded shadow-sm" 
+                             style="max-width: 100%; height: auto;"
+                             onerror="this.style.display='none'; document.getElementById('image-error-{{ question.question_number }}').style.display='block';">
+                        <div id="image-error-{{ question.question_number }}" class="alert alert-warning mt-2" style="display: none;">
+                            <i class="fas fa-exclamation-triangle"></i> 图片无法加载: {{ clean_filename }}
+                            <br><small>请确保图片文件存在于 source_challenges/images/ 目录中</small>
+                        </div>
+                    {% endif %}
                 </div>
                 {% endif %}
                 

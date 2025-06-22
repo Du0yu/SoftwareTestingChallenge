@@ -53,10 +53,9 @@
                 <h4 class="mt-4">重点复习题目 (错误次数≥2):</h4>
                 {% for q_num, wrongs in wrong_by_question.items() %}
                     {% if wrongs|length >= 2 %}
-                    <div class="card mt-2">
-                        <div class="card-body">
+                    <div class="card mt-2">                        <div class="card-body">
                             <h6>题目{{ q_num }} - 错误{{ wrongs|length }}次</h6>
-                            <p>{{ wrongs[0].question_text }}</p>
+                            <p>{{ wrongs[0].question_text | replace('\n', '<br>') | safe }}</p>
                             <p><strong>正确答案:</strong> <span class="text-success">{{ wrongs[0].correct_answer }}</span></p>
                         </div>
                     </div>

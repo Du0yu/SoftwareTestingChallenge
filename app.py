@@ -64,6 +64,21 @@ class QuizManager:
         if not question:
             return False
         return user_answer.strip() == question['correct_answer'].strip()
+    
+    def get_all_questions(self, quiz_id):
+        """Get all questions for a specific quiz"""
+        if quiz_id not in self.quizzes:
+            return []
+        return self.quizzes[quiz_id]['questions']
+    
+    def get_quiz_info(self, quiz_id):
+        """Get quiz information"""
+        if quiz_id not in self.quizzes:
+            return None
+        return {
+            'title': self.quizzes[quiz_id]['title'],
+            'total_questions': len(self.quizzes[quiz_id]['questions'])
+        }
 
 # Initialize with absolute path to avoid path issues
 try:
@@ -488,4 +503,68 @@ def debug_images():
     image_info['questions_with_images'] = image_questions
     
     return jsonify(image_info)
+
+@app.route('/study_mode')
+def study_mode():
+    """背题模式 - 显示题库选择页面"""
+    available_quizzes = quiz_manager.get_available_quizzes()
+    if not available_quizzes:
+        return redirect(url_for('index'))
+    
+    current_quiz = session.get('selected_quiz', list(available_quizzes.keys())[0])
+    
+    return render_template('study_mode.html', 
+                         available_quizzes=available_quizzes,
+                         current_quiz=current_quiz)
+
+@app.route('/study/<quiz_id>')
+def study_quiz(quiz_id):
+    """背题模式 - 显示特定题库的所有题目"""
+    if quiz_id not in quiz_manager.get_available_quizzes():
+        return redirect(url_for('study_mode'))
+    
+    questions = quiz_manager.get_all_questions(quiz_id)
+    quiz_info = quiz_manager.get_quiz_info(quiz_id)
+    
+    # 设置当前选中的题库
+    session['selected_quiz'] = quiz_id
+    
+    return render_template('study_questions.html', 
+                         questions=questions,
+                         quiz_id=quiz_id,
+                         quiz_info=quiz_info)
+
+@app.route('/study/<quiz_id>/<int:question_number>')
+def study_question(quiz_id, question_number):
+    """背题模式 - 显示单个题目详情"""
+    if quiz_id not in quiz_manager.get_available_quizzes():
+        return redirect(url_for('study_mode'))
+    
+    questions = quiz_manager.get_all_questions(quiz_id)
+    question = next((q for q in questions if q['question_number'] == question_number), None)
+    
+    if not question:
+        return redirect(url_for('study_quiz', quiz_id=quiz_id))
+    
+    quiz_info = quiz_manager.get_quiz_info(quiz_id)
+    
+    # 获取上一题和下一题的题号
+    question_numbers = [q['question_number'] for q in questions]
+    question_numbers.sort()
+    
+    current_index = question_numbers.index(question_number)
+    prev_question = question_numbers[current_index - 1] if current_index > 0 else None
+    next_question = question_numbers[current_index + 1] if current_index < len(question_numbers) - 1 else None
+    
+    return render_template('study_single.html', 
+                         question=question,
+                         quiz_id=quiz_id,
+                         quiz_info=quiz_info,
+                         prev_question=prev_question,
+                         next_question=next_question,
+                         current_position=current_index + 1,
+                         total_questions=len(questions))
+
+if __name__ == '__main__':
+    app.run(debug=True)
 

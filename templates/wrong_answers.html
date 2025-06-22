@@ -27,9 +27,8 @@
                 <div class="card-header">
                     <h5>题目{{ wrong.question_number }} (第{{ wrong.attempt }}次测试)</h5>
                     <small class="text-muted">{{ wrong.timestamp[:19] }}</small>
-                </div>
-                <div class="card-body">
-                    <h6>{{ wrong.question_text }}</h6>
+                </div>                <div class="card-body">
+                    <h6>{{ wrong.question_text | replace('\n', '<br>') | safe }}</h6>
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <div class="wrong-answer p-2 rounded">

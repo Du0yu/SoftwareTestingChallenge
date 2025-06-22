@@ -41,8 +41,8 @@
                         <a href="{{ url_for('quiz_complete') }}" class="btn btn-success">查看详细统计</a>
                     </div>
                 {% endif %}
-                
-                <div class="mt-4">
+                  <div class="mt-4">
+                    <a href="{{ url_for('study_mode') }}" class="btn btn-success me-2">背题模式</a>
                     <a href="{{ url_for('wrong_answers') }}" class="btn btn-warning me-2">查看错题集</a>
                     <a href="{{ url_for('quiz_history') }}" class="btn btn-info me-2">历史记录</a>
                     <a href="{{ url_for('reset') }}" class="btn btn-secondary me-2">重置当前题库</a>
